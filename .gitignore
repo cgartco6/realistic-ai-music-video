@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+.env
+*.db
+*.sqlite3
+
+# Node
+node_modules/
+build/
+dist/
+
+# Docker
+*.log
+
+# Uploads & models
+uploads/
+models/
+*.mp4
+*.wav
+*.jpg
+*.png
+
+# IDE
+.vscode/
+.idea/
