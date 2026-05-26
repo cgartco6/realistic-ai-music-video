@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #f5f7fb;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 2rem;
+            padding: 2rem;
+            box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #1a2a3a;
+        }
+        .row {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .card {
+            flex: 1;
+            background: #f8fafc;
+            border-radius: 1rem;
+            padding: 1.2rem;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+        .card label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .card input {
+            margin-top: 0.5rem;
+        }
+        .link-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.75rem;
+            margin: 1rem 0;
+            font-size: 1rem;
+        }
+        .generate-btn {
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 2rem;
+            cursor: pointer;
+            display: block;
+            margin: 1.5rem auto;
+            width: fit-content;
+            box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+        }
+        .status {
+            text-align: center;
+            margin: 1rem 0;
+            color: #475569;
+        }
+        .video-placeholder {
+            background: #1e293b;
+            border-radius: 1rem;
+            aspect-ratio: 16 / 9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        .file-name {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+        hr {
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🎵 Realistic AI Music Video</h1>
+    <div class="row">
+        <div class="card">
+            <label>📁 Upload audio</label>
+            <input type="file" accept=".mp3,.wav,.m4a">
+            <div class="file-name">No file chosen</div>
+        </div>
+        <div class="card">
+            <label>🖼️ Upload source photo</label>
+            <input type="file" accept=".jpg,.jpeg,.png">
+            <div class="file-name">No file chosen</div>
+        </div>
+    </div>
+    <input class="link-input" type="text" placeholder="Or paste Suno/aimusic.so link">
+    <button class="generate-btn">✨ Generate Video</button>
+    <div class="status">
+        ⏳ Status: ready – upload files to start
+    </div>
+    <div class="video-placeholder">
+        🎬 Your AI music video will appear here
+    </div>
+</div>
+</body>
+</html>
