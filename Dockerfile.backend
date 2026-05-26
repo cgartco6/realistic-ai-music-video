@@ -1,0 +1,27 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install system dependencies for audio/video processing and yt-dlp
+RUN apt-get update && apt-get install -y \
+    ffmpeg \
+    git \
+    git-lfs \
+    wget \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements and install Python packages
+COPY backend/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the entire backend code
+COPY backend/ .
+
+# Create necessary directories
+RUN mkdir -p /app/uploads /app/models
+
+# Download local models (if any) – currently a placeholder script
+RUN chmod +x /app/scripts/download_models.sh
+RUN /app/scripts/download_models.sh
+
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
